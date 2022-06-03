@@ -28,35 +28,35 @@ void setup() {
 void loop() {
   // rotates the servo motor from 15 to 165 degrees
   for(int i=15;i<=165;i++){  
-  myServo.write(i);
-  delay(30);
-  distance1 = calculateDistance(trigPin1, echoPin1);// Calls a function for calculating the distance measured by the Ultrasonic sensor for each degree
-  distance2 = calculateDistance(trigPin2, echoPin2);
-  Serial.print(distance1);
-  Serial.print(" ");
-  Serial.print(distance2);
-  Serial.print(" ");
-  distance = (distance1+distance2)/2;
-  if(distance < 10) digitalWrite(8,HIGH);
-  else digitalWrite(8,LOW);
-  Serial.print(distance); // Sends the distance value into the Serial Port
-  Serial.println(" cm"); // Sends addition character right next to the previous value needed later in the Processing IDE for indexing
+    myServo.write(i);
+    delay(30);
+    distance1 = calculateDistance(trigPin1, echoPin1);// Calls a function for calculating the distance measured by the Ultrasonic sensor for each degree
+    distance2 = calculateDistance(trigPin2, echoPin2);
+    Serial.print(distance1);
+    Serial.print(" ");
+    Serial.print(distance2);
+    Serial.print(" ");
+    distance = (distance1+distance2)/2;
+    if(distance < 10) digitalWrite(8,HIGH);
+    else digitalWrite(8,LOW);
+    Serial.print(distance); // Sends the distance value into the Serial Port
+    Serial.println(" cm"); // Sends addition character right next to the previous value needed later in the Processing IDE for indexing
   }
   // Repeats the previous lines from 165 to 15 degrees
   for(int i=165;i>15;i--){  
-  myServo.write(i);
-  delay(30);
-  distance1 = calculateDistance(trigPin1, echoPin1);
-  distance2 = calculateDistance(trigPin2, echoPin2);
-  Serial.print(distance1);
-  Serial.print(" ");
-  Serial.print(distance2);
-  Serial.print(" ");
-  distance = (distance1+distance2)/2;
-  if(distance < 10) digitalWrite(8,HIGH);
-  else digitalWrite(8,LOW);
-  Serial.print(distance);
-  Serial.println(" cm");
+    myServo.write(i);
+    delay(30);
+    distance1 = calculateDistance(trigPin1, echoPin1);
+    distance2 = calculateDistance(trigPin2, echoPin2);
+    Serial.print(distance1);
+    Serial.print(" ");
+    Serial.print(distance2);
+    Serial.print(" ");
+    distance = (distance1+distance2)/2;
+    if(distance < 10) digitalWrite(8,HIGH);
+    else digitalWrite(8,LOW);
+    Serial.print(distance);
+    Serial.println(" cm");
   }
 }
 
